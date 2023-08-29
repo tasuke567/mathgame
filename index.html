@@ -65,301 +65,131 @@
 </head>
 
 <body>
-    <div class="container m-5 p-5 align-content-center"></div>
-    <h1>เกมคณิตศาสตร์</h1>
-    <button type="button" class="btn btn-primary align-content-center" style="text-align: center;" onclick="generateRandomNumber()"
-        value="Generate Random Number">เริ่ม</button>
-
-    <div class="form-check" style="width:100%;height:0;padding: bottom 30px;position:relative;" required>
-        <input class="form-check-input" type="radio" name="operation" id="add" value="add">
-        <label class="form-check-label" for="add">
-            <!-- <iframe src="https://giphy.com/embed/LgC9OQ53v5mFi" width="100px" height="100px" style="position:absolute"
-                    frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
-            Add
-        </label>
-
-        <div class="form-check" style="width:100%;height:0;padding-bottom:120%;position:relative;">
-            <input class="form-check-input" type="radio" name="operation" id="subtract" value="subtract">
-            <label class="form-check-label" for="subtract">
-                <!-- <iframe src="https://giphy.com/embed/mjbDwJV0Vlk08" width="100px" height="100px"
-                        style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
-
-                Subtract
-            </label>
-
-            <div class="form-check" style="width:100%;height:0;padding-bottom:120%;position:relative;">
-                <input class="form-check-input" type="radio" name="operation" id="multiply" value="multiply">
-                <label class="form-check-label" for="multiply">
-                    <!-- <iframe src="https://giphy.com/embed/d8RK4kgqbHJSw" width="100px" height="100px"
-                            style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
-
-                    Multiply
-                </label>
-
-                <div class="form-check" style="width:100%;height:0;padding-bottom:120%;position:relative;">
-                    <input class="form-check-input" type="radio" name="operation" id="divide" value="divide">
-                    <label class="form-check-label" for="divide">
-                        <!-- <iframe src="https://giphy.com/embed/6PDD11h741IpG" width="100px" height="100px"
-                                style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
-                        Divide
-                    </label>
-                    <br>
-                    <div class="container"></div>
-                    <label id="random1">
-                        <label type="text" id="op">
-                        </label>
-
-                        <label id="random2">
-                        </label>
-                        <input type="text" id="answer1" class="align-content-center" style="text-align: center;"></input>
-                        <button class="btn btn-success" id="summit">ตอบ</button>
-
-                    </label>
-
-                </div>
-
-
-                <p id="p1">please submit</p>
-
-
-
-                <script>
-                    function generateRandomNumber() {
-
-
-                        const radioButtons = document.querySelectorAll('input[name="operation"]');
-                        const radioButtonsArray = Array.from(radioButtons);
-                        const checkedRadioButton = radioButtonsArray.find((radioButton) => radioButton.checked);
-                        console.log(checkedRadioButton.value);
-                        if (checkedRadioButton.value === "add") {
-                            let randomNumber1 = Math.floor(Math.random() * 100 + 1);
-                            const label1 = document.getElementById("random1");
-                            let randomNumber2 = Math.floor(Math.random() * 100 + 1);
-                            const label2 = document.getElementById("random2");
-
-
-                            const answer = randomNumber1 + randomNumber2;
-                            let roundedAnswer = Number(answer);
-
-
-                            const p = document.createElement("p");
-                            const textall = document.querySelector('p');
-                            textall.innerText = randomNumber2;
-                            document.body.appendChild(textall);
-                            const sum = document.getElementById("p1");
-                            sum.innerHTML =`${randomNumber1} + ${randomNumber2}`;
-                            console.log(`+ ${textall}`);
-                            console.log(roundedAnswer);
-
-                            document.getElementById("summit").addEventListener("click", () => {
-                                const inputValue = parseInt(document.getElementById("answer1").value);
-                                console.log(answer1.value);
-                                const number = parseInt(document.getElementById("answer1"));
-
-
-                                if (inputValue === roundedAnswer) {
-
-                                    const p = document.createElement("p");
-                                    const textall = document.querySelector('p');
-                                    textall.innerText = " correct!";
-                                    document.body.appendChild(textall);
-                                    console.log(`You have ${textall} messages`);
-
-                                } else {
-                                    const p = document.createElement("p");
-                                    const textall = document.querySelector('p');
-                                    textall.innerText = " Sorry, your answer is incorrect!!";
-                                    document.body.appendChild(textall);
-                                    console.log(`You have ${textall} messages`);
-
-                                }
-
-                            });
-
-
-                        }
-                        if (checkedRadioButton.value === "subtract") {
-                            let randomNumber1 = Math.floor(Math.random() * 100 + 1);
-                            const label1 = document.getElementById("random1");
-                     
-                            let randomNumber2 = Math.floor(Math.random() * 100 + 1);
-                            const label2 = document.getElementById("random2");
-
-                            const answer = randomNumber1 - randomNumber2;
-                            let roundedAnswer = Number(answer);
-                            const p = document.createElement("p");
-                            const textall = document.querySelector('p');
-                            textall.innerText = randomNumber2;
-                            document.body.appendChild(textall);
-                            const sum = document.getElementById("p1");
-                            sum.innerHTML = `${randomNumber1} - ${randomNumber2}`;
-                            console.log(`+ ${textall}`);
-                            console.log(roundedAnswer);
-
-                            document.getElementById("summit").addEventListener("click", () => {
-                                const inputValue = parseInt(document.getElementById("answer1").value);
-                                console.log(answer1.value);
-                                const number = parseInt(document.getElementById("answer1"));
-
-
-                                if (inputValue === roundedAnswer) {
-
-                                    const p = document.createElement("p");
-                                    const textall = document.querySelector('p');
-                                    textall.innerText = " correct!";
-                                    document.body.appendChild(textall);
-                                    console.log(`You have ${textall} messages`);
-
-                                } else {
-                                    const p = document.createElement("p");
-                                    const textall = document.querySelector('p');
-                                    textall.innerText = " Sorry, your answer is incorrect!!";
-                                    document.body.appendChild(textall);
-                                    console.log(`You have ${textall} messages`);
-
-                                }
-
-                            });
-                        }
-                        if (checkedRadioButton.value === "multiply") {
-                            let randomNumber1 = Math.floor(Math.random() * 100 + 1);
-                            const label1 = document.getElementById("random1");
-    
-                            let randomNumber2 = Math.floor(Math.random() * 100 + 1);
-                            const label2 = document.getElementById("random2");
-     
-                            const answer = randomNumber1 * randomNumber2;
-                            let roundedAnswer = Number(answer);
-                            const p = document.createElement("p");
-                            const textall = document.querySelector('p');
-                            textall.innerText = randomNumber2;
-                            document.body.appendChild(textall);
-                            const sum = document.getElementById("p1");
-                            sum.innerHTML = `${randomNumber1} * ${randomNumber2}`;
-                            console.log(`+ ${textall}`);
-                            console.log(roundedAnswer);
-
-                            document.getElementById("summit").addEventListener("click", () => {
-                                const inputValue = parseInt(document.getElementById("answer1").value);
-                                console.log(answer1.value);
-                                const number = parseInt(document.getElementById("answer1"));
-
-
-                                if (inputValue === roundedAnswer) {
-
-                                    const p = document.createElement("p");
-                                    const textall = document.querySelector('p');
-                                    textall.innerText = " correct!";
-                                    document.body.appendChild(textall);
-                                    console.log(`You have ${textall} messages`);
-
-                                } else {
-                                    const p = document.createElement("p");
-                                    const textall = document.querySelector('p');
-                                    textall.innerText = " Sorry, your answer is incorrect!!";
-                                    document.body.appendChild(textall);
-                                    console.log(`You have ${textall} messages`);
-
-                                }
-
-                            });
-                        }
-                        if (checkedRadioButton.value === "divide") {
-                            let randomNumber1 = Math.floor(Math.random() * 100 + 1);
-                            const label1 = document.getElementById("random1");
-
-                            let randomNumber2 = Math.floor(Math.random() * 100 + 1);
-                            const label2 = document.getElementById("random2");
-
-                            const answer = randomNumber1 / randomNumber2;
-                            let roundedAnswer = Number(Math.floor(answer));
-                            const p = document.createElement("p");
-                            const textall = document.querySelector('p');
-                            textall.innerText = randomNumber2;
-                            document.body.appendChild(textall);
-                            const sum = document.getElementById("p1");
-                            sum.innerHTML = `${randomNumber1} / ${randomNumber2}`;
-                            console.log(`+ ${textall}`);
-                            console.log(roundedAnswer);
-
-                            document.getElementById("summit").addEventListener("click", () => {
-                                const inputValue = parseInt(document.getElementById("answer1").value);
-                                console.log(answer1.value);
-                                const number = parseInt(document.getElementById("answer1"));
-
-
-                                if (inputValue === roundedAnswer) {
-
-                                    const p = document.createElement("p");
-                                    const textall = document.querySelector('p');
-                                    textall.innerText = " correct!";
-                                    document.body.appendChild(textall);
-                                    console.log(`You have ${textall} messages`);
-
-                                } else {
-                                    const p = document.createElement("p");
-                                    const textall = document.querySelector('p');
-                                    textall.innerText = " Sorry, your answer is incorrect!!";
-                                    document.body.appendChild(textall);
-                                    console.log(`You have ${textall} messages`);
-
-                                }
-                            });
-                        }
-
-                    }
-
-
-
-
-
-                    function checkResult(result) {
-                        return Number(result);
-                    }
-                    function add(randomNumber1, randomNumber2) {
-                        return randomNumber1 + randomNumber2;
-                    }
-                    function subtract(randomNumber1, randomNumber2) {
-                        return randomNumber1 - randomNumber2;
-                    }
-
-                    function multiply(randomNumber1, randomNumber2) {
-                        return randomNumber1 * randomNumber2;
-                    }
-
-                    function divide(randomNumber1, numrandomNumber2ber2) {
-                        return randomNumber1 / randomNumber2;
-                    }
-
-
-
-
-
-
-                </script>
-                <!-- <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-        <label class="form-check-label" for="exampleRadios1">
-            Default radio
-        </label>
+    <div class="container">
+        <div>
+            <h1>เกมคณิตศาสตร์</h1>
+        </div>
+        <h2 id="point"></h2>
+
+        <div class="box">
+            <p id="leftBox"></p>
+        </div>
+        <div class="operator">
+            <input type="radio" name="operation" id="positive" value="+"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+            </svg>
+            <input type="radio" name="operation" id="negative" value="-">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+            </svg>
+            <input type="radio" name="operation" id="multipli" value="*"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+            </svg>
+            <input type="radio" name="operation" id="divide" value="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-slash-lg"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
+            </svg>
+        </div>
+        <div class="box">
+            <p id="rightBox"></p>
+        </div>
+        <div class="answer"><input type="number" id="answer"></div>
+        <div class="check">
+            <p id="check"></p>
+        </div>
+        <button id="submit">ตอบ!!!</button>
     </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-        <label class="form-check-label" for="exampleRadios1">
-            Default radio
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-        <label class="form-check-label" for="exampleRadios1">
-            Default radio
-        </label>
-    </div> -->
+    <script>
+        const leftBox = document.getElementById('leftBox');
+        const rightBox = document.getElementById('rightBox');
+        const answerElement = document.getElementById('answer');
+        const submitButton = document.getElementById('submit');
+        const check = document.getElementById('check');
+        const positive = document.getElementById('positive');
+        const negative = document.getElementById('negative');
+        const multipli = document.getElementById('multipli');
+        const divide = document.getElementById('divide');
+        const point = document.getElementById('point');
 
-                <script src="./app.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-                    crossorigin="anonymous"></script>
+        let answer, leftnumber, rightnumber, count = 0;
+        point.textContent = 'คะแนน ' + count + '/20';
+        function randomnumber() {
+            leftnumber = Math.floor(Math.random() * 100 + 1);
+            rightnumber = Math.floor(Math.random() * 100 + 1);
+            leftBox.textContent = leftnumber;
+            rightBox.textContent = rightnumber;
+        }
+        randomnumber();
+        while (leftnumber <= rightnumber) {
+            randomnumber();
+        }
+        submitButton.addEventListener('click', () => {
+            if (positive.checked) {
+                answer = leftnumber + rightnumber;
+                console.log(Number(Math.floor(answer)));
+                if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
+                    ++count
+                    point.textContent = 'คะแนน ' + count + '/20';
+                    check.textContent = leftnumber + '+' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
+                } else {
+                    point.textContent = 'คะแนน ' + count + '/20';
+                    check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
+                }
+                answerElement.value = null;
+            } else if (negative.checked) {
+                answer = leftnumber - rightnumber;
+                console.log(Number(Math.floor(answer)));
+                if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
+                    ++count
+                    point.textContent = 'คะแนน ' + count + '/20';
+                    check.textContent = leftnumber + '-' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
+                } else {
+                    point.textContent = 'คะแนน ' + count + '/20';
+                    check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
+                }
+                answerElement.value = null;
+            } else if (multipli.checked) {
+                answer = leftnumber * rightnumber;
+                console.log(Number(Math.floor(answer)));
+                if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
+                    ++count
+                    point.textContent = 'คะแนน ' + count + '/20';
+                    check.textContent = leftnumber + '*' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
+                } else {
+                    point.textContent = 'คะแนน ' + count + '/20';
+                    check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
+                }
+                answerElement.value = null;
+            } else if (divide.checked) {
+                answer = leftnumber / rightnumber;
+                console.log(Number(Math.floor(answer)));
+                if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
+                    ++count
+                    point.textContent = 'คะแนน ' + count + '/20';
+                    check.textContent = leftnumber + '/' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
+                } else {
+                    point.textContent = 'คะแนน ' + count + '/20';
+                    check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
+                }
+                answerElement.value = null;
+            }
+
+            
+            randomnumber();
+            while (leftnumber <= rightnumber) {
+                randomnumber();
+            } // Call randomnumber() after checking the answer
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
