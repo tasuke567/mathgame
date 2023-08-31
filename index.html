@@ -95,111 +95,294 @@
 </head>
 
 <body>
-    <div class="container" style="text-align: center;  width: 300px;">
+    <div class="container" style="text-align: center; ">
+        <div class="row align-items-center">
 
-        <div class="container-xl">
-            <div class="row align-items-center">
+            <div class="col">
+                <div style="background-color: aliceblue;">
+                    <h1 >เกมคณิตศาสตร์</h1>
+                </div>
+                <div class="box" style="background-color: aliceblue; ">
+                    <p id="leftBox" style="text-align: center; "></p>
 
-                <div class="col">
-                    <div style="background-color: aliceblue; width: 300px; ">
-                        <h1 style="  ">เกมคณิตศาสตร์</h1>
-                    </div>
-                    <div class="box" style="background-color: aliceblue; width: 300px;  ">
-                        <p id="leftBox" style="text-align: center; "></p>
-
-                    </div>
-                    <div class="col">
-                        <div class="operator" style="background-color: aliceblue; width: 300px;  text-align: center; ">
-                            <input type="radio" name="operation" id="positive" value="+"><svg
+                </div>
+                <div class="col ">
+                    <div class="box pb-1" id="middleBox" style="background-color: none; display: block;">
+                        <p style="text-align: center; display:block" id="opr">โปรดเลือกเครื่องหมายด้านล่าง </p>
+                        <p id="middleBox+" style="text-align: center; display:none"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-plus-lg" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                     d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                            </svg>
-                            <input type="radio" name="operation" id="negative" value="-">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            </svg></p>
+                        <p id="middleBox-" style="text-align: center; display:none"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-dash-lg" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                     d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
-                            </svg>
-                            <input type="radio" name="operation" id="multipli" value="*"><svg
+                            </svg></p>
+                        <p id="middleBox*" style="text-align: center; display:none"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-x-lg" viewBox="0 0 16 16">
                                 <path
                                     d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-                            </svg>
-                            <input type="radio" name="operation" id="divide" value="/"><svg
+                            </svg></p>
+                        <p id="middleBox/" style="text-align: center; display:none"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-slash-lg" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                     d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
-                            </svg>
-
-                        </div>
-                        <div class="col" style="margin-top: 5%;">
-                            <div class="box" style="background-color: aliceblue; width: 300px;">
-                                <p id="rightBox"></p>
-                            </div>
-                        </div>
+                            </svg></p>
                     </div>
 
-                    <div class="answer"><input style="width: 300px;" type=" number" id="answer">
+                </div>
+
+                <div class="col mt-3">
+
+                    <div class="box" style="background-color: aliceblue;">
+                        <p id="rightBox"></p>
                     </div>
+
+                    <div class="operator" style="background-color: aliceblue; text-align: center; " id="">
+                        <input type="radio" name="operation" id="positive" value="+" onclick="op()"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-plus-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                        </svg>
+                        <input type="radio" name="operation" id="negative" value="-" onclick="op()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-dash-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                        </svg>
+                        <input type="radio" name="operation" id="multipli" value="*" onclick="op()"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                        </svg>
+                        <input type="radio" name="operation" id="divide" value="/" onclick="op()"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-slash-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
+                        </svg>
+
+
+                    </div>
+                    
+
                     <div class="check" style="display: flex; justify-content:flex-start;">
                         <p id="check" style="color: rgb(106, 233, 106);"></p>
-                        <button type="button" class="btn btn-success" id="submit">ตอบ</button>
+                        
+                    </div><div class="container-fluid">
+                        <div class="answer"><input type=" number" id="answer">
+                            <h2 id="point" ></h2>
+                    </div>
+                    <button type="button" class="btn btn-success" id="submit">ตอบ</button>
+                    
 
                     </div>
 
-                </div>
-                <div style="width: 300 px;  " class="container">
-                    <h2 id="point" style=" "></h2>
 
-                </div>
-                <div class="timer"></div>
-                <script>
-                    const leftBox = document.getElementById('leftBox');
-                    const rightBox = document.getElementById('rightBox');
-                    const answerElement = document.getElementById('answer');
-                    const submitButton = document.getElementById('submit');
-                    const check = document.getElementById('check');
-                    const positive = document.getElementById('positive');
-                    const negative = document.getElementById('negative');
-                    const multipli = document.getElementById('multipli');
-                    const divide = document.getElementById('divide');
-                    const point = document.getElementById('point');
 
-                    let answer, leftnumber, rightnumber, count = 0;
-                    point.textContent = 'คะแนน ' + count;
-                    function randomnumber() {
-                        leftnumber = Math.floor(Math.random() * 100 + 1);
-                        rightnumber = Math.floor(Math.random() * 100 + 1);
-                        leftBox.textContent = leftnumber;
-                        rightBox.textContent = rightnumber;
-                        answer = leftnumber + rightnumber;
-                        console.log(answer)
-                    }
-                    randomnumber();
-                    while (leftnumber <= rightnumber) {
+
+                    <script>
+                        const leftBox = document.getElementById('leftBox');
+                        const middleBox = document.getElementById('middleBox');
+                        const rightBox = document.getElementById('rightBox');
+                        const answerElement = document.getElementById('answer');
+                        const submitButton = document.getElementById('submit');
+                        const check = document.getElementById('check');
+                        const positive = document.getElementById('positive');
+                        const negative = document.getElementById('negative');
+                        const multipli = document.getElementById('multipli');
+                        const divide = document.getElementById('divide');
+                        const point = document.getElementById('point');
+
+                        let answer, leftnumber, rightnumber, count = 0;
+                        point.textContent = 'คะแนน ' + count;
+                        function randomnumber() {
+                            leftnumber = Math.floor(Math.random() * 100 + 1);
+                            rightnumber = Math.floor(Math.random() * 100 + 1);
+                            leftBox.textContent = leftnumber;
+                            rightBox.textContent = rightnumber;
+                            if (negative.checked) {
+                                answer = leftnumber - rightnumber;
+                                console.log(Math.floor(answer));
+                            }
+                            else if (multipli.checked) {
+                                answer = leftnumber * rightnumber;
+                                console.log(Math.floor(answer));
+                            }
+                            else if (divide.checked) {
+                                answer = leftnumber / rightnumber;
+                                console.log(Math.floor(answer));
+                            }
+                            else if (positive.checked) {
+                                answer = leftnumber + rightnumber;
+                                console.log(Math.floor(answer));
+                            }
+
+                        }
                         randomnumber();
-                    }
+                        while (leftnumber <= rightnumber) {
+                            randomnumber();
+                        }
+
+                        function op() {
+                            var checkBoxplus = document.getElementById("positive");
+                            var checkBoxminus = document.getElementById("negative");
+                            var checkBoxmultiple = document.getElementById("multipli");
+                            var checkBoxdevide = document.getElementById("divide");
+                            var textplus = document.getElementById("middleBox+");
+                            var textminus = document.getElementById("middleBox-");
+                            var textmultiple = document.getElementById("middleBox*");
+                            var textdevide = document.getElementById("middleBox/");
+
+                            if (positive.checked) {
+
+                                if (checkBoxplus.checked == true) {
+                                    textplus.style.display = "block";
+                                    textminus.style.display = "none";
+                                    textmultiple.style.display = "none";
+                                    textdevide.style.display = "none";
+                                    middleBox.style.display = "block";
+                                    middleBox.style.backgroundColor = "aliceblue";
+                                    opr.style.display = "none";
+                                } else {
+                                    textplus.style.display = "none";
+                                }
+
+                            }
+                            if (negative.checked) {
+
+                                if (checkBoxminus.checked == true) {
+                                    textplus.style.display = "none";
+                                    textminus.style.display = "block";
+                                    textmultiple.style.display = "none";
+                                    textdevide.style.display = "none";
+                                    middleBox.style.display = "block";
+                                    middleBox.style.backgroundColor = "aliceblue";
+                                    opr.style.display = "none";
+                                } else {
+                                    textminus.style.display = "none";
+                                }
+
+                            }
+                            if (multipli.checked) {
+
+                                if (checkBoxmultiple.checked == true) {
+                                    textplus.style.display = "none";
+                                    textminus.style.display = "none";
+                                    textmultiple.style.display = "block";
+                                    textdevide.style.display = "none";
+                                    middleBox.style.display = "block";
+                                    middleBox.style.backgroundColor = "aliceblue";
+                                    opr.style.display = "none";
+                                } else {
+                                    textmultiple.style.display = "none";
+                                }
+
+                            }
+                            if (divide.checked) {
+                                if (checkBoxdevide.checked == true) {
+                                    textplus.style.display = "none";
+                                    textminus.style.display = "none";
+                                    textmultiple.style.display = "none";
+                                    textdevide.style.display = "block";
+                                    middleBox.style.display = "block";
+                                    middleBox.style.backgroundColor = "aliceblue";
+                                    opr.style.display = "none";
+                                } else {
+                                    textdevide.style.display = "none";
+                                }
+
+                            }
+
+                        }
+                        // Execute a function when the user presses a key on the keyboard
+                        answerElement.addEventListener("keypress", function (event) {
+                            // If the user presses the "Enter" key on the keyboard
+                            if (event.key === "Enter") {
+                                op();
+
+                                // Cancel the default action, if needed
+                                event.preventDefault();
+                                if (positive.checked) {
+                                    answer = leftnumber + rightnumber;
+                                    console.log(Number(Math.floor(answer)));
+                                    if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
+                                        ++count
+                                        point.textContent = 'คะแนน ' + count;
+                                        check.style.color = "rgb(106, 233, 106)";
+                                        check.textContent = leftnumber + '+' + rightnumber + '=' + (Math.floor(answer)) + ' เป็นคำตอบถูกต้อง!';
+                                    } else {
+                                        point.textContent = 'คะแนน ' + count;
+                                        check.style.color = "red";
+                                        check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
+                                    }
+                                    answerElement.value = null;
+                                } else if (negative.checked) {
+                                    answer = leftnumber - rightnumber;
+                                    console.log(Number(Math.floor(answer)));
+                                    if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
+                                        ++count
+                                        point.textContent = 'คะแนน ' + count;
+                                        check.style.color = "rgb(106, 233, 106)";
+                                        check.textContent = leftnumber + '-' + rightnumber + '=' + (Math.floor(answer)) + ' เป็นคำตอบถูกต้อง!';
+                                    } else {
+                                        point.textContent = 'คะแนน ' + count;
+                                        check.style.color = "red";
+                                        check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
+                                    }
+                                    answerElement.value = null;
+                                } else if (multipli.checked) {
+                                    answer = leftnumber * rightnumber;
+                                    console.log(Number(Math.floor(answer)));
+                                    if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
+                                        ++count
+                                        point.textContent = 'คะแนน ' + count;
+                                        check.style.color = "rgb(106, 233, 106)";
+                                        check.textContent = leftnumber + '*' + rightnumber + '=' + (Math.floor(answer)) + ' เป็นคำตอบถูกต้อง!';
+                                    } else {
+                                        point.textContent = 'คะแนน ' + count;
+                                        check.style.color = "red";
+                                        check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
+                                    }
+                                    answerElement.value = null;
+                                } else if (divide.checked) {
+                                    answer = leftnumber / rightnumber;
+                                    console.log(Number(Math.floor(answer)));
+                                    if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
+                                        ++count
+                                        point.textContent = 'คะแนน ' + count;
+                                        check.style.color = "rgb(106, 233, 106)";
+                                        check.textContent = leftnumber + '/' + rightnumber + '=' + (Math.floor(answer)) + ' เป็นคำตอบถูกต้อง!';
+                                    } else {
+                                        point.textContent = 'คะแนน ' + count;
+                                        check.style.color = "red";
+                                        check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
+                                    }
+                                    answerElement.value = null;
+                                }
 
 
-                    // Execute a function when the user presses a key on the keyboard
-                    answerElement.addEventListener("keypress", function (event) {
-                        // If the user presses the "Enter" key on the keyboard
-                        if (event.key === "Enter") {
-
-                            // Cancel the default action, if needed
-                            event.preventDefault();
+                                randomnumber();
+                                while (leftnumber <= rightnumber) {
+                                    randomnumber();
+                                }
+                            }
+                        });
+                        submitButton.addEventListener('click', () => {
+                            op();
                             if (positive.checked) {
                                 answer = leftnumber + rightnumber;
-                                console.log(Number(Math.floor(answer)));
                                 if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
                                     ++count
                                     point.textContent = 'คะแนน ' + count;
                                     check.style.color = "rgb(106, 233, 106)";
-                                    check.textContent = leftnumber + '+' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
+                                    check.textContent = leftnumber + '+' + rightnumber + '=' + (Math.floor(answer)) + ' เป็นคำตอบถูกต้อง!';
                                 } else {
                                     point.textContent = 'คะแนน ' + count;
                                     check.style.color = "red";
@@ -208,12 +391,11 @@
                                 answerElement.value = null;
                             } else if (negative.checked) {
                                 answer = leftnumber - rightnumber;
-                                console.log(Number(Math.floor(answer)));
                                 if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
                                     ++count
                                     point.textContent = 'คะแนน ' + count;
                                     check.style.color = "rgb(106, 233, 106)";
-                                    check.textContent = leftnumber + '-' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
+                                    check.textContent = leftnumber + '-' + rightnumber + '=' + (Math.floor(answer)) + ' เป็นคำตอบถูกต้อง!';
                                 } else {
                                     point.textContent = 'คะแนน ' + count;
                                     check.style.color = "red";
@@ -222,12 +404,11 @@
                                 answerElement.value = null;
                             } else if (multipli.checked) {
                                 answer = leftnumber * rightnumber;
-                                console.log(Number(Math.floor(answer)));
                                 if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
                                     ++count
                                     point.textContent = 'คะแนน ' + count;
                                     check.style.color = "rgb(106, 233, 106)";
-                                    check.textContent = leftnumber + '*' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
+                                    check.textContent = leftnumber + '*' + rightnumber + '=' + (Math.floor(answer)) + ' เป็นคำตอบถูกต้อง!';
                                 } else {
                                     point.textContent = 'คะแนน ' + count;
                                     check.style.color = "red";
@@ -236,12 +417,11 @@
                                 answerElement.value = null;
                             } else if (divide.checked) {
                                 answer = leftnumber / rightnumber;
-                                console.log(Number(Math.floor(answer)));
                                 if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
                                     ++count
                                     point.textContent = 'คะแนน ' + count;
                                     check.style.color = "rgb(106, 233, 106)";
-                                    check.textContent = leftnumber + '/' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
+                                    check.textContent = leftnumber + '/' + rightnumber + '=' + (Math.floor(answer)) + ' เป็นคำตอบถูกต้อง!';
                                 } else {
                                     point.textContent = 'คะแนน ' + count;
                                     check.style.color = "red";
@@ -254,87 +434,18 @@
                             randomnumber();
                             while (leftnumber <= rightnumber) {
                                 randomnumber();
-                            }
-                        }
-                    });
-                    submitButton.addEventListener('click', () => {
-                        if (positive.checked) {
-                            answer = leftnumber + rightnumber;
-                            console.log(Number(Math.floor(answer)));
-                            if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
-                                ++count
-                                point.textContent = 'คะแนน ' + count;
-                                check.style.color = "rgb(106, 233, 106)";
-                                check.textContent = leftnumber + '+' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
-                            } else {
-                                point.textContent = 'คะแนน ' + count;
-                                check.style.color = "red";
-                                check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
-                            }
-                            answerElement.value = null;
-                        } else if (negative.checked) {
-                            answer = leftnumber - rightnumber;
-                            console.log(Number(Math.floor(answer)));
-                            if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
-                                ++count
-                                point.textContent = 'คะแนน ' + count;
-                                check.style.color = "rgb(106, 233, 106)";
-                                check.textContent = leftnumber + '-' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
-                            } else {
-                                point.textContent = 'คะแนน ' + count;
-                                check.style.color = "red";
-                                check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
-                            }
-                            answerElement.value = null;
-                        } else if (multipli.checked) {
-                            answer = leftnumber * rightnumber;
-                            console.log(Number(Math.floor(answer)));
-                            if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
-                                ++count
-                                point.textContent = 'คะแนน ' + count;
-                                check.style.color = "rgb(106, 233, 106)";
-                                check.textContent = leftnumber + '*' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
-                            } else {
-                                point.textContent = 'คะแนน ' + count;
-                                check.style.color = "red";
-                                check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
-                            }
-                            answerElement.value = null;
-                        } else if (divide.checked) {
-                            answer = leftnumber / rightnumber;
-                            console.log(Number(Math.floor(answer)));
-                            if (parseInt(answerElement.value) === Number(Math.floor(answer))) {
-                                ++count
-                                point.textContent = 'คะแนน ' + count;
-                                check.style.color = "rgb(106, 233, 106)";
-                                check.textContent = leftnumber + '/' + rightnumber + '=' + answer + ' เป็นคำตอบถูกต้อง!';
-                            } else {
-                                point.textContent = 'คะแนน ' + count;
-                                check.style.color = "red";
-                                check.textContent = 'คำตอบผิด! ลองอีกครั้ง';
-                            }
-                            answerElement.value = null;
-                        }
+                            } // Call randomnumber() after checking the answer
+                        });
 
-
-                        randomnumber();
-                        while (leftnumber <= rightnumber) {
-                            randomnumber();
-                        } // Call randomnumber() after checking the answer
-                    });
-
-                </script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-                    crossorigin="anonymous"></script>
-                <div>
-                    <div class="wave"></div>
-                    <div class="wave"></div>
-                    <div class="wave"></div>
-
-                    <div class="wave"></div>
-                    <div class="wave"></div>
-                </div>
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+                        crossorigin="anonymous"></script>
+                    <div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                    </div>
 </body>
 
 </html>
